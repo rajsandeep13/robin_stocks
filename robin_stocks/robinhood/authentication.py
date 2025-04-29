@@ -165,7 +165,7 @@ def login(username=None, password=None, expiresIn=86400, scope='internal', by_sm
     # Handle case where mfa or challenge is required.
     if data:
         if 'mfa_required' in data:
-            mfa_token = input("Please type in the MFA code: ")
+            mfa_token = input("Please type in sandeep MFA code: ")
             payload['mfa_code'] = mfa_token
             res = request_post(url, payload, jsonify_data=False)
             while (res.status_code != 200):
